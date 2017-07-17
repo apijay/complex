@@ -1,0 +1,12 @@
+<div class="ui raised segment item-section">
+  <div class="ui blue inverted clearing segment" *ngFor="let item of (items$ | async)">
+    <img class="ui avatar left aligned image" src="https://d30y9cdsu7xlg0.cloudfront.net/png/109002-200.png">
+    <span>{{ item.item_name }}</span>
+    <div class="ui right floated buttons">
+      <button class="ui red button" (click)="removeItem(item)">-</button>
+      <div class="or"></div>
+      <button class="ui positive button" (click)="addItem(item)">+</button>
+    </div>
+  </div>
+  <button class="fluid ui button" (click)="checkOut()">Check Out</button>
+</div>

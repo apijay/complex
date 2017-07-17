@@ -1,0 +1,14 @@
+<div class="ui piled green inverted attached segment bill-section">
+  <div *ngFor="let cartItem of (cartItems$ | async) | keys">
+    <div class="ui blue segment" *ngIf="cartItem.value > 0">
+      <button class="ui left aligned disabled red button">{{cartItem.key}}</button>
+      <button class="ui right floated disabled red button"><h4>x{{cartItem.value}}</h4></button>
+    </div>
+  </div>
+
+  <div class="ui bottom attached label" tabindex="0">
+    <div class="ui left floated red label">Total</div>
+    <div class="ui green label">${{ (totalCost$ | async) - (discount$ | async)}}</div>
+    <a class="ui teal tag label">You Saved: {{(discount$ | async)}}</a>
+  </div>
+</div>
